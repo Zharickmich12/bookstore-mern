@@ -11,6 +11,7 @@ const port = process.env.PORT || 5000;
 const authRoutes = require('./routes/auth');
 const bookRoutes = require('./routes/books');
 const categoryRoutes = require('./routes/categories');
+const cartRoutes = require('./routes/cart');
 
 // Conectar a MongoDB
 connectDB();
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
 app.use('/api/categories', categoryRoutes);
+app.use('/api/cart', cartRoutes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
